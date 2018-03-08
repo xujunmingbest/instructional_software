@@ -1,0 +1,4 @@
+﻿  实验2实验方法1.cpp
+  base.obj :托管的代码存在时 /DEBUG:FASTLINK 不受支持；正在重新启动与 /DEBUG:FULL 的链接
+  instructional_software.vcxproj -> E:\clr\instructional_software\Debug\instructional_software.exe
+  instructional_software.vcxproj -> E:\clr\instructional_software\Debug\instructional_software.pdb (Partial PDB)

@@ -38,10 +38,11 @@ namespace instructional_software {
 		}
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	protected:
-	private: System::Windows::Forms::Label^  label1;
+
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label1;
 
 	private:
 		/// <summary>
@@ -58,10 +59,10 @@ namespace instructional_software {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(实验1实验方法1::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -74,19 +75,6 @@ namespace instructional_software {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			// 
-			// label1
-			// 
-			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label1->Location = System::Drawing::Point(484, 13);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(677, 208);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"按图8-1接线 。接线时，先接主电路，它是从380V三相交流电源的输出端 U、V、W开始，经三刀开关 Q1、熔断器FU1、FU2、FU3、接触器KM1主触点到电动"
-				L"机M的三个线端A、B、C的电路，用导线按顺序串联起来，有三路。主电路经检查无误后，再接控制电路，从熔断器FU4插孔V开始，经按钮SB1常开、接触器KM1线圈到插"
-				L"孔W 。线接好经指导老师检查无误后，按下列步骤进行实验：";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// label2
 			// 
@@ -120,6 +108,19 @@ namespace instructional_software {
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"（3）按下启动按钮SB1，对电动机M进行点动操作，比较按下SB1和松开SB1时电动机 M的运转情况";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label1
+			// 
+			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->label1->Location = System::Drawing::Point(484, 13);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(677, 208);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"按图8-1接线 。接线时，先接主电路，它是从380V三相交流电源的输出端 U、V、W开始，经三刀开关 Q1、熔断器FU1、FU2、FU3、接触器KM1主触点到电动"
+				L"机M的三个线端A、B、C的电路，用导线按顺序串联起来，有三路。主电路经检查无误后，再接控制电路，从熔断器FU4插孔V开始，经按钮SB1常开、接触器KM1线圈到插"
+				L"孔W 。线接好经指导老师检查无误后，按下列步骤进行实验：";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// 实验1实验方法1
 			// 

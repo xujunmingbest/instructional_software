@@ -2,7 +2,8 @@
 #include <iostream>
 #include <sapi.h>
 
-#include "MainWnd.h"
+#include "Ö÷´°Ìå.h"
+
 
 using namespace std;
 using namespace instructional_software;

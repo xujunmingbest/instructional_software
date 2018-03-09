@@ -20,6 +20,4 @@ int main()
 	Application::EnableVisualStyles();  //启用可视化界面
 	Application::Run(gcnew MainWnd()); //启动用户登入模块
 
-
-
 }

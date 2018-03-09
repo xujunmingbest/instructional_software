@@ -77,7 +77,7 @@ namespace instructional_software {
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"ËÎÌו", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label2->Location = System::Drawing::Point(90, 119);
+			this->label2->Location = System::Drawing::Point(90, 128);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(906, 140);
 			this->label2->TabIndex = 1;

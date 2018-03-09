@@ -161,6 +161,24 @@
     <ClCompile Include="实验4实验目的.cpp" />
     <ClCompile Include="实验4实验部件.cpp" />
     <ClCompile Include="实验4讨论题.cpp" />
+    <ClCompile Include="实验5.cpp" />
+    <ClCompile Include="实验5实验方法.cpp" />
+    <ClCompile Include="实验5实验目的.cpp" />
+    <ClCompile Include="实验5讨论题.cpp" />
+    <ClCompile Include="实验5选用组件.cpp" />
+    <ClCompile Include="实验6.cpp" />
+    <ClCompile Include="实验6实验方法1.cpp" />
+    <ClCompile Include="实验6实验方法2.cpp" />
+    <ClCompile Include="实验6实验方法3.cpp" />
+    <ClCompile Include="实验6实验方法4.cpp" />
+    <ClCompile Include="实验6实验目的.cpp" />
+    <ClCompile Include="实验6讨论题.cpp" />
+    <ClCompile Include="实验6选用部件.cpp" />
+    <ClCompile Include="实验7.cpp" />
+    <ClCompile Include="实验7实验方法.cpp" />
+    <ClCompile Include="实验7实验目的.cpp" />
+    <ClCompile Include="实验7讨论题.cpp" />
+    <ClCompile Include="实验7选用组件.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h">
@@ -251,6 +269,60 @@
     <ClInclude Include="实验4讨论题.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="实验5.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验5实验方法.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验5实验目的.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验5讨论题.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验5选用组件.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6实验方法1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6实验方法2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6实验方法3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6实验方法4.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6实验目的.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6讨论题.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验6选用部件.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验7.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验7实验方法.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验7实验目的.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验7讨论题.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="实验7选用组件.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="主窗体.resx">
@@ -336,6 +408,60 @@
     </EmbeddedResource>
     <EmbeddedResource Include="实验4讨论题.resx">
       <DependentUpon>实验4讨论题.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5.resx">
+      <DependentUpon>实验5.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5实验方法.resx">
+      <DependentUpon>实验5实验方法.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5实验目的.resx">
+      <DependentUpon>实验5实验目的.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5讨论题.resx">
+      <DependentUpon>实验5讨论题.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5选用组件.resx">
+      <DependentUpon>实验5选用组件.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6.resx">
+      <DependentUpon>实验6.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法1.resx">
+      <DependentUpon>实验6实验方法1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法2.resx">
+      <DependentUpon>实验6实验方法2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法3.resx">
+      <DependentUpon>实验6实验方法3.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法4.resx">
+      <DependentUpon>实验6实验方法4.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验目的.resx">
+      <DependentUpon>实验6实验目的.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6讨论题.resx">
+      <DependentUpon>实验6讨论题.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6选用部件.resx">
+      <DependentUpon>实验6选用部件.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7.resx">
+      <DependentUpon>实验7.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7实验方法.resx">
+      <DependentUpon>实验7实验方法.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7实验目的.resx">
+      <DependentUpon>实验7实验目的.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7讨论题.resx">
+      <DependentUpon>实验7讨论题.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7选用组件.resx">
+      <DependentUpon>实验7选用组件.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

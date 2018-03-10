@@ -1,8 +1,7 @@
 ﻿  main.cpp
 main.cpp(17): warning C4101: “a”: 未引用的局部变量
   主窗体.cpp
-  实验7.cpp
-  实验7讨论题.cpp
+  实验11.cpp
   正在生成代码...
   base.obj :托管的代码存在时 /DEBUG:FASTLINK 不受支持；正在重新启动与 /DEBUG:FULL 的链接
   instructional_software.vcxproj -> E:\clr\instructional_software\Debug\instructional_software.exe

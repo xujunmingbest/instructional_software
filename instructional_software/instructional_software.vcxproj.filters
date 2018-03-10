@@ -40,6 +40,18 @@
     <Filter Include="子窗体\实验7">
       <UniqueIdentifier>{b493c3ec-4d42-441b-bcd5-6663cf35ebd8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="子窗体\实验8">
+      <UniqueIdentifier>{0679e7f0-1948-432a-a79c-d16690826703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="子窗体\实验9">
+      <UniqueIdentifier>{f7254f86-a228-44e9-8943-28e798bc5f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="子窗体\实验10">
+      <UniqueIdentifier>{29ac510c-2522-4a66-adc2-3765a901ce50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="子窗体\实验11">
+      <UniqueIdentifier>{5f00c196-c7d5-475f-a594-af8cf932fbb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -189,6 +201,69 @@
     <ClCompile Include="实验7讨论题.cpp">
       <Filter>子窗体\实验7</Filter>
     </ClCompile>
+    <ClCompile Include="实验8.cpp">
+      <Filter>子窗体\实验8</Filter>
+    </ClCompile>
+    <ClCompile Include="实验8实验目的.cpp">
+      <Filter>子窗体\实验8</Filter>
+    </ClCompile>
+    <ClCompile Include="实验8选用组件.cpp">
+      <Filter>子窗体\实验8</Filter>
+    </ClCompile>
+    <ClCompile Include="实验8实验方法.cpp">
+      <Filter>子窗体\实验8</Filter>
+    </ClCompile>
+    <ClCompile Include="实验8讨论题.cpp">
+      <Filter>子窗体\实验8</Filter>
+    </ClCompile>
+    <ClCompile Include="实验9.cpp">
+      <Filter>子窗体\实验9</Filter>
+    </ClCompile>
+    <ClCompile Include="实验9实验目的.cpp">
+      <Filter>子窗体\实验9</Filter>
+    </ClCompile>
+    <ClCompile Include="实验9实验方法1.cpp">
+      <Filter>子窗体\实验9</Filter>
+    </ClCompile>
+    <ClCompile Include="实验9实验方法2.cpp">
+      <Filter>子窗体\实验9</Filter>
+    </ClCompile>
+    <ClCompile Include="实验9讨论题.cpp">
+      <Filter>子窗体\实验9</Filter>
+    </ClCompile>
+    <ClCompile Include="实验9选用组件.cpp">
+      <Filter>子窗体\实验9</Filter>
+    </ClCompile>
+    <ClCompile Include="实验10.cpp">
+      <Filter>子窗体\实验10</Filter>
+    </ClCompile>
+    <ClCompile Include="实验10实验目的.cpp">
+      <Filter>子窗体\实验10</Filter>
+    </ClCompile>
+    <ClCompile Include="实验10选用组件.cpp">
+      <Filter>子窗体\实验10</Filter>
+    </ClCompile>
+    <ClCompile Include="实验10实验方法.cpp">
+      <Filter>子窗体\实验10</Filter>
+    </ClCompile>
+    <ClCompile Include="实验10讨论题.cpp">
+      <Filter>子窗体\实验10</Filter>
+    </ClCompile>
+    <ClCompile Include="实验11.cpp">
+      <Filter>子窗体\实验11</Filter>
+    </ClCompile>
+    <ClCompile Include="实验11实验目的.cpp">
+      <Filter>子窗体\实验11</Filter>
+    </ClCompile>
+    <ClCompile Include="实验11选用组件.cpp">
+      <Filter>子窗体\实验11</Filter>
+    </ClCompile>
+    <ClCompile Include="实验11实验方法.cpp">
+      <Filter>子窗体\实验11</Filter>
+    </ClCompile>
+    <ClCompile Include="实验11讨论题.cpp">
+      <Filter>子窗体\实验11</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="实验1.h">
@@ -335,6 +410,69 @@
     <ClInclude Include="实验7讨论题.h">
       <Filter>子窗体\实验7</Filter>
     </ClInclude>
+    <ClInclude Include="实验8.h">
+      <Filter>子窗体\实验8</Filter>
+    </ClInclude>
+    <ClInclude Include="实验8实验目的.h">
+      <Filter>子窗体\实验8</Filter>
+    </ClInclude>
+    <ClInclude Include="实验8选用组件.h">
+      <Filter>子窗体\实验8</Filter>
+    </ClInclude>
+    <ClInclude Include="实验8实验方法.h">
+      <Filter>子窗体\实验8</Filter>
+    </ClInclude>
+    <ClInclude Include="实验8讨论题.h">
+      <Filter>子窗体\实验8</Filter>
+    </ClInclude>
+    <ClInclude Include="实验9.h">
+      <Filter>子窗体\实验9</Filter>
+    </ClInclude>
+    <ClInclude Include="实验9实验目的.h">
+      <Filter>子窗体\实验9</Filter>
+    </ClInclude>
+    <ClInclude Include="实验9实验方法1.h">
+      <Filter>子窗体\实验9</Filter>
+    </ClInclude>
+    <ClInclude Include="实验9实验方法2.h">
+      <Filter>子窗体\实验9</Filter>
+    </ClInclude>
+    <ClInclude Include="实验9讨论题.h">
+      <Filter>子窗体\实验9</Filter>
+    </ClInclude>
+    <ClInclude Include="实验9选用组件.h">
+      <Filter>子窗体\实验9</Filter>
+    </ClInclude>
+    <ClInclude Include="实验10.h">
+      <Filter>子窗体\实验10</Filter>
+    </ClInclude>
+    <ClInclude Include="实验10实验目的.h">
+      <Filter>子窗体\实验10</Filter>
+    </ClInclude>
+    <ClInclude Include="实验10选用组件.h">
+      <Filter>子窗体\实验10</Filter>
+    </ClInclude>
+    <ClInclude Include="实验10实验方法.h">
+      <Filter>子窗体\实验10</Filter>
+    </ClInclude>
+    <ClInclude Include="实验10讨论题.h">
+      <Filter>子窗体\实验10</Filter>
+    </ClInclude>
+    <ClInclude Include="实验11.h">
+      <Filter>子窗体\实验11</Filter>
+    </ClInclude>
+    <ClInclude Include="实验11实验目的.h">
+      <Filter>子窗体\实验11</Filter>
+    </ClInclude>
+    <ClInclude Include="实验11选用组件.h">
+      <Filter>子窗体\实验11</Filter>
+    </ClInclude>
+    <ClInclude Include="实验11实验方法.h">
+      <Filter>子窗体\实验11</Filter>
+    </ClInclude>
+    <ClInclude Include="实验11讨论题.h">
+      <Filter>子窗体\实验11</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="实验1.resx">
@@ -419,6 +557,60 @@
       <Filter>资源文件</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="实验4讨论题.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5实验方法.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5实验目的.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5讨论题.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验5选用组件.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法1.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法2.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法3.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验方法4.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6实验目的.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6讨论题.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验6选用部件.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7实验方法.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7实验目的.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7讨论题.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="实验7选用组件.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
   </ItemGroup>

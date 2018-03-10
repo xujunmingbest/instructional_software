@@ -1,5 +1,15 @@
   instructional_software.主窗体.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验1.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验10.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验10实验方法.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验10实验目的.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验10讨论题.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验10选用组件.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验11.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验11实验方法.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验11实验目的.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验11讨论题.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验11选用组件.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验1实验方法1.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验1实验方法2.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验1实验方法3.resources - Embedded, ContainedInManifestFile, 
@@ -44,6 +54,17 @@
   instructional_software.实验7实验目的.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验7讨论题.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验7选用组件.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验8.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验8实验方法.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验8实验目的.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验8讨论题.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验8选用组件.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验9.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验9实验方法1.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验9实验方法2.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验9实验目的.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验9讨论题.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.实验9选用组件.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly instructional_software, Version=0.0.*, Culture=固定语言(固定国家/地区): 
 	hash=SHA1, flags=PublicKey
@@ -197,6 +218,69 @@ Class instructional_software.实验7讨论题: AutoLayout, AnsiClass, Class, Pub
 Class instructional_software.实验7: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验8实验目的: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验8选用组件: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验8实验方法: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验8讨论题: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验8: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验9实验目的: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验9选用组件: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验9讨论题: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验9实验方法1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验9实验方法2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验9: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验10实验目的: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验10实验方法: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验10选用组件: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验10讨论题: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验10: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验11: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class instructional_software.MainWnd: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验11实验方法: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验11实验目的: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验11讨论题: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.实验11选用组件: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -48,12 +48,21 @@ namespace instructional_software {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"base";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// base
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(282, 255);
+			this->Name = L"base";
+			this->Text = L"base";
+			this->Load += gcnew System::EventHandler(this, &base::base_Load);
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void base_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
 	};
 }

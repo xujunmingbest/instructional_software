@@ -1,5 +1,5 @@
 #pragma once
-#include "source.h"
+#include "voice.h"
 extern bool 实验1实验目的Status;
 namespace instructional_software {
 

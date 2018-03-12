@@ -142,7 +142,7 @@ namespace instructional_software {
 				static_cast<System::Byte>(134)));
 			this->label6->Location = System::Drawing::Point(943, 401);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(500, 84);
+			this->label6->Size = System::Drawing::Size(500, 99);
 			this->label6->TabIndex = 11;
 			this->label6->Text = L"（4）按下SB2按钮，KM1线圈断电，主轴电动机M1断电停止运转，同时冷却泵电动机M2也停止运转。";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -151,7 +151,7 @@ namespace instructional_software {
 			// 
 			this->label7->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label7->Location = System::Drawing::Point(943, 495);
+			this->label7->Location = System::Drawing::Point(943, 519);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(500, 84);
 			this->label7->TabIndex = 12;

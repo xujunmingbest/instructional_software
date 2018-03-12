@@ -92,9 +92,9 @@ namespace instructional_software {
 			// 
 			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label1->Location = System::Drawing::Point(828, 80);
+			this->label1->Location = System::Drawing::Point(828, 90);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(607, 71);
+			this->label1->Size = System::Drawing::Size(607, 54);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"起动控制屏将三相调压输出调至线电压380V输出，再按下“关”按钮，按图8-18接线。";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -103,9 +103,9 @@ namespace instructional_software {
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label3->Location = System::Drawing::Point(828, 171);
+			this->label3->Location = System::Drawing::Point(828, 166);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(607, 71);
+			this->label3->Size = System::Drawing::Size(607, 96);
 			this->label3->TabIndex = 8;
 			this->label3->Text = L"（1）起动电源，按下SB2，电动机按三角形接法起动，观察并记录电动机转速和安培表最大读数为__________A。";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -114,9 +114,9 @@ namespace instructional_software {
 			// 
 			this->label4->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label4->Location = System::Drawing::Point(828, 242);
+			this->label4->Location = System::Drawing::Point(828, 272);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(607, 71);
+			this->label4->Size = System::Drawing::Size(607, 97);
 			this->label4->TabIndex = 9;
 			this->label4->Text = L"（2）经过一段时间延时后，电动机按双星形接法运行，观察并记录电动机转速和安培表读数为____________A。";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -125,7 +125,7 @@ namespace instructional_software {
 			// 
 			this->label5->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label5->Location = System::Drawing::Point(828, 313);
+			this->label5->Location = System::Drawing::Point(828, 399);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(607, 71);
 			this->label5->TabIndex = 10;

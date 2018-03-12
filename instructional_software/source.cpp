@@ -1,6 +1,5 @@
 #include "source.h"
 
-string LangdunvPath;
 
 string T_to_string(const String^in, int len)
 {

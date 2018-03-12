@@ -74,7 +74,7 @@ namespace instructional_software {
 				static_cast<System::Byte>(134)));
 			this->label1->Location = System::Drawing::Point(217, 115);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(906, 122);
+			this->label1->Size = System::Drawing::Size(906, 145);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"1、三相线绕式异步电动机转子串电阻可以减小起动电流，提高功率因数增加起动转矩外，还可以进行什么？";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;

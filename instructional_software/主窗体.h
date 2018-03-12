@@ -1,5 +1,5 @@
 #pragma once
-#include "source.h"
+#include "voice.h"
 #include "实验1.h"
 #include "实验2.h"
 #include "实验3.h"
@@ -11,6 +11,8 @@
 #include "实验9.h"
 #include "实验10.h"
 #include "实验11.h"
+#include "实验12.h"
+#include "实验13.h"
 namespace instructional_software {
 
 	using namespace System;
@@ -61,6 +63,8 @@ namespace instructional_software {
 	private: System::Windows::Forms::ToolStripMenuItem^  shiyanToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验10ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验十一ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  实验十二ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  实验十三ToolStripMenuItem;
 
 	private:
 		/// <summary>
@@ -88,8 +92,10 @@ namespace instructional_software {
 			this->实验八ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->shiyanToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->实验10ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->实验十一ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->实验十二ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->实验十三ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -120,10 +126,11 @@ namespace instructional_software {
 			// 
 			// 实验ToolStripMenuItem
 			// 
-			this->实验ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(11) {
+			this->实验ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(13) {
 				this->实验一ToolStripMenuItem,
 					this->实验二ToolStripMenuItem, this->实验三ToolStripMenuItem, this->实验四ToolStripMenuItem, this->实验五ToolStripMenuItem, this->实验六ToolStripMenuItem,
-					this->实验七ToolStripMenuItem, this->实验八ToolStripMenuItem, this->shiyanToolStripMenuItem, this->实验10ToolStripMenuItem, this->实验十一ToolStripMenuItem
+					this->实验七ToolStripMenuItem, this->实验八ToolStripMenuItem, this->shiyanToolStripMenuItem, this->实验10ToolStripMenuItem, this->实验十一ToolStripMenuItem,
+					this->实验十二ToolStripMenuItem, this->实验十三ToolStripMenuItem
 			});
 			this->实验ToolStripMenuItem->Name = L"实验ToolStripMenuItem";
 			this->实验ToolStripMenuItem->Size = System::Drawing::Size(77, 36);
@@ -199,6 +206,20 @@ namespace instructional_software {
 			this->实验10ToolStripMenuItem->Text = L"实验十";
 			this->实验10ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验10ToolStripMenuItem_Click);
 			// 
+			// 实验十一ToolStripMenuItem
+			// 
+			this->实验十一ToolStripMenuItem->Name = L"实验十一ToolStripMenuItem";
+			this->实验十一ToolStripMenuItem->Size = System::Drawing::Size(196, 36);
+			this->实验十一ToolStripMenuItem->Text = L"实验十一";
+			this->实验十一ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验十一ToolStripMenuItem_Click);
+			// 
+			// 实验十二ToolStripMenuItem
+			// 
+			this->实验十二ToolStripMenuItem->Name = L"实验十二ToolStripMenuItem";
+			this->实验十二ToolStripMenuItem->Size = System::Drawing::Size(196, 36);
+			this->实验十二ToolStripMenuItem->Text = L"实验十二";
+			this->实验十二ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验十二ToolStripMenuItem_Click);
+			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(229, 31);
@@ -208,12 +229,12 @@ namespace instructional_software {
 			this->textBox1->Text = L"设置朗读女路径";
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MainWnd::textBox1_TextChanged);
 			// 
-			// 实验十一ToolStripMenuItem
+			// 实验十三ToolStripMenuItem
 			// 
-			this->实验十一ToolStripMenuItem->Name = L"实验十一ToolStripMenuItem";
-			this->实验十一ToolStripMenuItem->Size = System::Drawing::Size(196, 36);
-			this->实验十一ToolStripMenuItem->Text = L"实验十一";
-			this->实验十一ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验十一ToolStripMenuItem_Click);
+			this->实验十三ToolStripMenuItem->Name = L"实验十三ToolStripMenuItem";
+			this->实验十三ToolStripMenuItem->Size = System::Drawing::Size(196, 36);
+			this->实验十三ToolStripMenuItem->Text = L"实验十三";
+			this->实验十三ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验十三ToolStripMenuItem_Click);
 			// 
 			// MainWnd
 			// 
@@ -237,11 +258,9 @@ namespace instructional_software {
 #pragma endregion
 
 		private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-
-			LangdunvPath = T_to_string(textBox1->Text, 1000);
+			LangdunvPath = T_to_string(textBox1->Text, textBox1->Text->Length*2);
 			LangdunvPath.insert(0, "\"");
 			LangdunvPath.insert(LangdunvPath.length(), "\" d=");
-			cout << LangdunvPath << endl;
 		}
 private:
 /**************实验窗体变量指针*************/
@@ -256,7 +275,8 @@ private:
 	实验9 ^实验9Wnd;
 	实验10 ^实验10Wnd;
 	实验11 ^实验11Wnd;
-	//实验12 ^实验12Wnd;
+	实验12 ^实验12Wnd;
+	实验13 ^实验13Wnd;
 	private: System::Void 实验一ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
 		if (实验1Status == true)
@@ -393,5 +413,28 @@ private: System::Void 实验十一ToolStripMenuItem_Click(System::Object^  sender, S
 	实验11Wnd->WindowState = FormWindowState::Maximized;
 
 }
+private: System::Void 实验十二ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (实验12Status == true)
+	{
+		实验12Wnd->BringToFront(); //这个可以置于最前面
+		实验12Wnd->WindowState = FormWindowState::Maximized;
+		return;
+	}
+	实验12Wnd = gcnew 实验12;
+	实验12Wnd->Show();
+	实验12Wnd->WindowState = FormWindowState::Maximized;
+}
+private: System::Void 实验十三ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (实验13Status == true)
+	{
+		实验13Wnd->BringToFront(); //这个可以置于最前面
+		实验13Wnd->WindowState = FormWindowState::Maximized;
+		return;
+	}
+	实验13Wnd = gcnew 实验13;
+	实验13Wnd->Show();
+	实验13Wnd->WindowState = FormWindowState::Maximized;
+}
 };
 }
+

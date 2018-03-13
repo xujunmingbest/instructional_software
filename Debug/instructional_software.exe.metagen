@@ -1,5 +1,6 @@
   instructional_software.base.resources - Embedded, ContainedInManifestFile, 
   instructional_software.主窗体.resources - Embedded, ContainedInManifestFile, 
+  instructional_software.声音配置.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验1.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验10.resources - Embedded, ContainedInManifestFile, 
   instructional_software.实验10实验方法.resources - Embedded, ContainedInManifestFile, 
@@ -328,6 +329,9 @@ Class instructional_software.实验13讨论题: AutoLayout, AnsiClass, Class, Pu
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class instructional_software.实验13: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class instructional_software.声音配置: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class instructional_software.MainWnd: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

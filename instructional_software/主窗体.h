@@ -13,6 +13,7 @@
 #include "实验11.h"
 #include "实验12.h"
 #include "实验13.h"
+#include "声音配置.h"
 namespace instructional_software {
 
 	using namespace System;
@@ -47,12 +48,12 @@ namespace instructional_software {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label1;
+
 	protected:
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验一ToolStripMenuItem;
-	private: System::Windows::Forms::TextBox^  textBox1;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  实验二ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验三ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验四ToolStripMenuItem;
@@ -65,6 +66,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::ToolStripMenuItem^  实验十一ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验十二ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验十三ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  声音配置ToolStripMenuItem;
 
 	private:
 		/// <summary>
@@ -79,7 +81,6 @@ namespace instructional_software {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->实验ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->实验一ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -94,30 +95,20 @@ namespace instructional_software {
 			this->实验10ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->实验十一ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->实验十二ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->实验十三ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->声音配置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->label1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(134)));
-			this->label1->Location = System::Drawing::Point(96, 172);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(469, 68);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"KBE-5001电力拖动教学软件";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->Font = (gcnew System::Drawing::Font(L"微软雅黑", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->实验ToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->实验ToolStripMenuItem,
+					this->声音配置ToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(677, 40);
@@ -220,15 +211,6 @@ namespace instructional_software {
 			this->实验十二ToolStripMenuItem->Text = L"实验十二";
 			this->实验十二ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验十二ToolStripMenuItem_Click);
 			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(229, 31);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(436, 25);
-			this->textBox1->TabIndex = 2;
-			this->textBox1->Text = L"设置朗读女路径";
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MainWnd::textBox1_TextChanged);
-			// 
 			// 实验十三ToolStripMenuItem
 			// 
 			this->实验十三ToolStripMenuItem->Name = L"实验十三ToolStripMenuItem";
@@ -236,14 +218,20 @@ namespace instructional_software {
 			this->实验十三ToolStripMenuItem->Text = L"实验十三";
 			this->实验十三ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::实验十三ToolStripMenuItem_Click);
 			// 
+			// 声音配置ToolStripMenuItem
+			// 
+			this->声音配置ToolStripMenuItem->Name = L"声音配置ToolStripMenuItem";
+			this->声音配置ToolStripMenuItem->Size = System::Drawing::Size(127, 36);
+			this->声音配置ToolStripMenuItem->Text = L"声音配置";
+			this->声音配置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::声音配置ToolStripMenuItem_Click);
+			// 
 			// MainWnd
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(677, 423);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->menuStrip1);
+			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MainWnd";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -257,11 +245,7 @@ namespace instructional_software {
 		}
 #pragma endregion
 
-		private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			LangdunvPath = T_to_string(textBox1->Text, textBox1->Text->Length*2);
-			LangdunvPath.insert(0, "\"");
-			LangdunvPath.insert(LangdunvPath.length(), "\" d=");
-		}
+
 private:
 /**************实验窗体变量指针*************/
 	实验1 ^实验1Wnd;
@@ -277,6 +261,7 @@ private:
 	实验11 ^实验11Wnd;
 	实验12 ^实验12Wnd;
 	实验13 ^实验13Wnd;
+	声音配置^ 声音配置Wnd;
 	private: System::Void 实验一ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
 		if (实验1Status == true)
@@ -434,6 +419,18 @@ private: System::Void 实验十三ToolStripMenuItem_Click(System::Object^  sender, S
 	实验13Wnd = gcnew 实验13;
 	实验13Wnd->Show();
 	实验13Wnd->WindowState = FormWindowState::Maximized;
+}
+private: System::Void 声音配置ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (声音配置Status == true)
+	{
+		声音配置Wnd->BringToFront(); //这个可以置于最前面
+		声音配置Wnd->WindowState = FormWindowState::Maximized;
+		return;
+	}
+	声音配置Wnd = gcnew 声音配置;
+	声音配置Wnd->MdiParent = this;
+	声音配置Wnd->Show();
+	声音配置Wnd->WindowState = FormWindowState::Maximized;
 }
 };
 }

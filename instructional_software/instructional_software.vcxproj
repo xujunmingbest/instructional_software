@@ -135,6 +135,7 @@
     <ClCompile Include="voice.cpp" />
     <ClCompile Include="主窗体.cpp" />
     <ClCompile Include="source.cpp" />
+    <ClCompile Include="声音配置.cpp" />
     <ClCompile Include="实验1.cpp" />
     <ClCompile Include="实验10.cpp" />
     <ClCompile Include="实验10实验方法.cpp" />
@@ -223,6 +224,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="source.h" />
+    <ClInclude Include="声音配置.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="实验1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -464,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="主窗体.resx">
       <DependentUpon>主窗体.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="声音配置.resx">
+      <DependentUpon>声音配置.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="实验1.resx">
       <DependentUpon>实验1.h</DependentUpon>

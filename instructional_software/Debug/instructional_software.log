@@ -1,98 +1,9 @@
-﻿  base.cpp
-  main.cpp
-main.cpp(17): warning C4101: “a”: 未引用的局部变量
-  voice.cpp
+﻿  main.cpp
   主窗体.cpp
-  source.cpp
-source.cpp(8): warning C4477: “snprintf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const System::String ^”
   实验1.cpp
-  实验10.cpp
-  实验10实验方法.cpp
-  实验10实验目的.cpp
-  实验10讨论题.cpp
-  实验10选用组件.cpp
-  实验11.cpp
-  实验11实验方法.cpp
-  实验11实验目的.cpp
-  实验11讨论题.cpp
-  实验11选用组件.cpp
-  实验12.cpp
-  实验12实验方法.cpp
-  实验12实验目的.cpp
-  实验12讨论题.cpp
-  正在生成代码...
-  正在编译...
-  实验12选用组件.cpp
-  实验13.cpp
-  实验13实验方法1.cpp
-  实验13实验方法2.cpp
-  实验13实验方法3.cpp
-  实验13实验目的.cpp
-  实验13讨论题.cpp
-  实验13选用组件.cpp
-  实验1实验方法1.cpp
-  实验1实验方法2.cpp
-  实验1实验方法3.cpp
   实验1实验目的.cpp
-  实验1讨论题.cpp
   实验1选用组件.cpp
-  实验2.cpp
-  实验2实验方法1.cpp
-  实验2实验方法2.cpp
-  实验2实验方法3.cpp
-  实验2实验方法4.cpp
-  实验2实验目的.cpp
   正在生成代码...
-  正在编译...
-  实验2讨论题.cpp
-  实验2选用组件.cpp
-  实验3.cpp
-  实验3实验方法.cpp
-  实验3实验目的.cpp
-  实验3讨论题.cpp
-  实验3选用组件.cpp
-  实验4.cpp
-  实验4实验方法1.cpp
-  实验4实验方法2.cpp
-  实验4实验方法3.cpp
-  实验4实验目的.cpp
-  实验4实验部件.cpp
-  实验4讨论题.cpp
-  实验5.cpp
-  实验5实验方法.cpp
-  实验5实验目的.cpp
-  实验5讨论题.cpp
-  实验5选用组件.cpp
-  实验6.cpp
-  正在生成代码...
-  正在编译...
-  实验6实验方法1.cpp
-  实验6实验方法2.cpp
-  实验6实验方法3.cpp
-  实验6实验方法4.cpp
-  实验6实验目的.cpp
-  实验6讨论题.cpp
-  实验6选用部件.cpp
-  实验7.cpp
-  实验7实验方法.cpp
-  实验7实验目的.cpp
-  实验7讨论题.cpp
-  实验7选用组件.cpp
-  实验8.cpp
-  实验8实验方法.cpp
-  实验8实验目的.cpp
-  实验8讨论题.cpp
-  实验8选用组件.cpp
-  实验9.cpp
-  实验9实验方法1.cpp
-  实验9实验方法2.cpp
-  正在生成代码...
-  正在编译...
-  实验9实验目的.cpp
-  实验9讨论题.cpp
-  实验9选用组件.cpp
-  正在生成代码...
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   base.obj :托管的代码存在时 /DEBUG:FASTLINK 不受支持；正在重新启动与 /DEBUG:FULL 的链接
   instructional_software.vcxproj -> E:\clr\instructional_software\Debug\instructional_software.exe
   instructional_software.vcxproj -> E:\clr\instructional_software\Debug\instructional_software.pdb (Partial PDB)

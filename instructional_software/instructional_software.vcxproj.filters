@@ -58,6 +58,9 @@
     <Filter Include="子窗体\实验13">
       <UniqueIdentifier>{a2fcbae3-98dc-4fce-982b-e30dea8d4d4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="子窗体\声音配置">
+      <UniqueIdentifier>{c11263a8-24c0-43f2-be33-b414e584b006}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -309,6 +312,9 @@
     <ClCompile Include="voice.cpp">
       <Filter>mode</Filter>
     </ClCompile>
+    <ClCompile Include="声音配置.cpp">
+      <Filter>子窗体\声音配置</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="实验1.h">
@@ -556,6 +562,9 @@
     </ClInclude>
     <ClInclude Include="voice.h">
       <Filter>mode</Filter>
+    </ClInclude>
+    <ClInclude Include="声音配置.h">
+      <Filter>子窗体\声音配置</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

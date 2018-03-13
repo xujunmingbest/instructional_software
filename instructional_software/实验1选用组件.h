@@ -71,7 +71,7 @@ namespace instructional_software {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(766, 409);
+			this->ClientSize = System::Drawing::Size(1420, 712);
 			this->Controls->Add(this->pictureBox1);
 			this->Name = L"实验1选用组件";
 			this->Text = L"实验1选用组件";

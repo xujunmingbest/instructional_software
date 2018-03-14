@@ -32,7 +32,10 @@ public:
 	void set_voice_engine(int flag);
 	void set_LangdunvPath(String ^path);
 	void voice_speek(String^ in);
-	void voice_speek(const string &in);
+	void voice_speek(string &in);
+	void pause() {
+		pVoice->Pause();
+	}
 };
 
 extern voice g_voice;

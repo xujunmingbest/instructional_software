@@ -22,3 +22,16 @@ wchar_t *multiByteToWideChar(const string& pKey)
 	MultiByteToWideChar(CP_OEMCP, 0, pCStrKey, strlen(pCStrKey) + 1, pWCStrKey, pSize);
 	return pWCStrKey;
 }
+
+
+void trim(string &s)
+{
+	int index = 0;
+	if (!s.empty())
+	{
+		while ((index = s.find(' ', index)) != string::npos)
+		{
+			s.erase(index, 1);
+		}
+	}
+}

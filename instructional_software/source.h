@@ -11,5 +11,5 @@ string T_to_string(const String^in, int len);
 
 wchar_t *multiByteToWideChar(const string& pKey);
 
-
+void trim(string &s);
 

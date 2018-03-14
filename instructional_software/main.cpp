@@ -10,9 +10,9 @@ using namespace instructional_software;
 
 
 [STAThreadAttribute]
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
+//int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
-//int main()
+int main()
 {
 	Application::EnableVisualStyles();  //启用可视化界面
 	Application::Run(gcnew MainWnd()); //启动用户登入模块

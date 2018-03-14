@@ -18,7 +18,7 @@ voice::voice() {
 		cout << "TTS声音引擎初始化失败" << endl;
 		pVoice = nullptr;
 	}
-
+	
 	wchar_t *TTStest = multiByteToWideChar("我是TTS语音引擎");
 	pVoice->Speak(TTStest, SPF_DEFAULT, nullptr);
 	delete[] TTStest;
@@ -46,7 +46,7 @@ void voice::set_LangdunvPath(String ^path)
 	LangdunvPath.insert(LangdunvPath.length(), "\" d=");
 }
 
-void voice::voice_speek(const string &in)
+void voice::voice_speek(string &in)
 {
 	try {
 		if (Voice_engine_selection != VOICE_ENGINE_LANGDUNV
@@ -59,7 +59,7 @@ void voice::voice_speek(const string &in)
 		cout << e << endl;
 		return;
 	}
-
+	trim(in);
 	if (Voice_engine_selection == VOICE_ENGINE_LANGDUNV) {
 		system((LangdunvPath + in).c_str());
 	}

@@ -2,6 +2,8 @@
 
 
 voice::voice() {
+	LangdunvPath = "\"C:\\Program Files (x86)\\¿ ∂¡≈Æ\\¿ ∂¡≈Æ.exe\" d=";
+
 	pVoice = nullptr;
 
 	if (FAILED(::CoInitialize(NULL)))

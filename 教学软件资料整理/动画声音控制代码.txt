@@ -1,0 +1,15 @@
+			 Thread ^Thread_speek ;
+			 void speek_control() {
+				 Speek(label1->Text);
+				 Speek(label2->Text);
+				 Speek(label3->Text);
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验1实验目的::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }

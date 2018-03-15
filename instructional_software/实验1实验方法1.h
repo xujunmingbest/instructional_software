@@ -48,7 +48,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  labell1;
 	private: System::Windows::Forms::Label^  labell2;
 	private: System::Windows::Forms::Label^  labell3;
-	private: System::Windows::Forms::Label^  labelsb1;
+
 
 
 
@@ -57,6 +57,11 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  labelkm1;
 	private: System::Windows::Forms::Label^  labelkm2;
 	private: System::Windows::Forms::Label^  labelkm3;
+	private: System::Windows::Forms::Label^  labelsb12;
+	private: System::Windows::Forms::Label^  labelsb11;
+
+
+
 
 
 
@@ -84,11 +89,12 @@ namespace instructional_software {
 			this->labell1 = (gcnew System::Windows::Forms::Label());
 			this->labell2 = (gcnew System::Windows::Forms::Label());
 			this->labell3 = (gcnew System::Windows::Forms::Label());
-			this->labelsb1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->labelkm1 = (gcnew System::Windows::Forms::Label());
 			this->labelkm2 = (gcnew System::Windows::Forms::Label());
 			this->labelkm3 = (gcnew System::Windows::Forms::Label());
+			this->labelsb12 = (gcnew System::Windows::Forms::Label());
+			this->labelsb11 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -175,15 +181,6 @@ namespace instructional_software {
 			this->labell3->TabIndex = 7;
 			this->labell3->Text = L"label7";
 			// 
-			// labelsb1
-			// 
-			this->labelsb1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->labelsb1->Location = System::Drawing::Point(379, 123);
-			this->labelsb1->Name = L"labelsb1";
-			this->labelsb1->Size = System::Drawing::Size(22, 10);
-			this->labelsb1->TabIndex = 8;
-			this->labelsb1->Text = L"label8";
-			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -223,16 +220,34 @@ namespace instructional_software {
 			this->labelkm3->TabIndex = 12;
 			this->labelkm3->Text = L"label11";
 			// 
+			// labelsb12
+			// 
+			this->labelsb12->BackColor = System::Drawing::Color::White;
+			this->labelsb12->Location = System::Drawing::Point(380, 122);
+			this->labelsb12->Name = L"labelsb12";
+			this->labelsb12->Size = System::Drawing::Size(19, 21);
+			this->labelsb12->TabIndex = 19;
+			// 
+			// labelsb11
+			// 
+			this->labelsb11->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelsb11->Location = System::Drawing::Point(389, 113);
+			this->labelsb11->Name = L"labelsb11";
+			this->labelsb11->Size = System::Drawing::Size(10, 46);
+			this->labelsb11->TabIndex = 20;
+			this->labelsb11->Text = L"label8";
+			// 
 			// 实验1实验方法1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1333, 727);
+			this->Controls->Add(this->labelsb11);
+			this->Controls->Add(this->labelsb12);
 			this->Controls->Add(this->labelkm3);
 			this->Controls->Add(this->labelkm2);
 			this->Controls->Add(this->labelkm1);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->labelsb1);
 			this->Controls->Add(this->labell3);
 			this->Controls->Add(this->labell2);
 			this->Controls->Add(this->labell1);
@@ -260,7 +275,8 @@ namespace instructional_software {
 			     labell1->Visible = false;
 				 labell2->Visible = false;
 				 labell3->Visible = false;
-				 labelsb1->Visible = false;
+				 labelsb11->Visible = false;
+				 labelsb12->Visible = false;
 			 }
 			 Thread ^Thread_speek;
 			 void speek_control() {
@@ -274,7 +290,8 @@ namespace instructional_software {
 				 labell2->Visible = true;
 				 labell3->Visible = true;
 				 Speek(label4->Text);
-				 labelsb1->Visible = true;
+				 labelsb11->Visible = true;
+				 labelsb12->Visible = true;
 			 }
 			 void Speek(String ^in) {
 				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验1实验方法1::speek));

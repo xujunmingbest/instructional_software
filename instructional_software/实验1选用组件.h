@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验1选用组件Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验1选用组件 摘要
 	/// </summary>
@@ -19,6 +20,7 @@ namespace instructional_software {
 		{
 			InitializeComponent();
 			实验1选用组件Status = true;
+			CheckForIllegalCrossThreadCalls = false;
 			//
 			//TODO:  在此处添加构造函数代码
 			//
@@ -42,6 +44,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::BindingSource^  bindingSource1;
+	private: System::Windows::Forms::Button^  button1;
 	private: System::ComponentModel::IContainer^  components;
 	protected:
 
@@ -66,6 +69,7 @@ namespace instructional_software {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -125,11 +129,22 @@ namespace instructional_software {
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"电气控制2";
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(880, 12);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(73, 34);
+			this->button1->TabIndex = 5;
+			this->button1->Text = L"朗读";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验1选用组件::button1_Click);
+			// 
 			// 实验1选用组件
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1420, 994);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox3);
@@ -148,8 +163,41 @@ namespace instructional_software {
 		}
 #pragma endregion
 	private: System::Void 实验1选用组件_Load(System::Object^  sender, System::EventArgs^  e) {
+		init();
 	}
 	private: System::Void pictureBox3_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
+
+
+			 void init() {
+				 pictureBox2->Visible = false;
+				 label1->Visible = false;
+
+				 pictureBox3->Visible = false;
+				 label2->Visible = false;
+			 }
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek("实验1选用组件:三箱异步电动机1件");
+				 Speek("继电控制接触挂箱1 一件");
+				 pictureBox2->Visible = true;
+				 label1->Visible = true;
+				 Speek("继电控制接触挂箱2 一件");
+				 pictureBox3->Visible = true;
+				 label2->Visible = true;
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验1选用组件::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	init();
+	speek_control();
+}
 };
 }

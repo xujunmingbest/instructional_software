@@ -42,6 +42,10 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  labelq3;
+	private: System::Windows::Forms::Label^  labelq2;
+	private: System::Windows::Forms::Label^  labelq1;
 	protected:
 
 	private:
@@ -64,6 +68,10 @@ namespace instructional_software {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->labelq3 = (gcnew System::Windows::Forms::Label());
+			this->labelq2 = (gcnew System::Windows::Forms::Label());
+			this->labelq1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -133,11 +141,51 @@ namespace instructional_software {
 			this->label5->Text = L"（5）按下SB3，观察并记录电动机M的转向、各触点的吸断情况。";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(905, 557);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(134, 53);
+			this->button1->TabIndex = 11;
+			this->button1->Text = L"朗读并演示";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// labelq3
+			// 
+			this->labelq3->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq3->Location = System::Drawing::Point(237, 105);
+			this->labelq3->Name = L"labelq3";
+			this->labelq3->Size = System::Drawing::Size(10, 43);
+			this->labelq3->TabIndex = 19;
+			this->labelq3->Text = L"labell1";
+			// 
+			// labelq2
+			// 
+			this->labelq2->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq2->Location = System::Drawing::Point(156, 105);
+			this->labelq2->Name = L"labelq2";
+			this->labelq2->Size = System::Drawing::Size(10, 43);
+			this->labelq2->TabIndex = 18;
+			this->labelq2->Text = L"labell1";
+			// 
+			// labelq1
+			// 
+			this->labelq1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq1->Location = System::Drawing::Point(74, 105);
+			this->labelq1->Name = L"labelq1";
+			this->labelq1->Size = System::Drawing::Size(10, 43);
+			this->labelq1->TabIndex = 17;
+			this->labelq1->Text = L"labell1";
+			// 
 			// 实验2实验方法4
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1427, 861);
+			this->Controls->Add(this->labelq3);
+			this->Controls->Add(this->labelq2);
+			this->Controls->Add(this->labelq1);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);

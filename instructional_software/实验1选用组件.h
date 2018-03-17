@@ -131,7 +131,7 @@ namespace instructional_software {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(880, 12);
+			this->button1->Location = System::Drawing::Point(825, 29);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(73, 34);
 			this->button1->TabIndex = 5;

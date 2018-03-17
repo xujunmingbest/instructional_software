@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验2讨论题Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验2讨论题 摘要
 	/// </summary>
@@ -18,6 +19,7 @@ namespace instructional_software {
 		实验2讨论题(void)
 		{
 			InitializeComponent();
+			CheckForIllegalCrossThreadCalls = false;
 			实验2讨论题Status = true;
 			//
 			//TODO:  在此处添加构造函数代码
@@ -41,6 +43,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Button^  button1;
 
 	private:
 		/// <summary>
@@ -59,6 +62,7 @@ namespace instructional_software {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label2
@@ -67,7 +71,7 @@ namespace instructional_software {
 				static_cast<System::Byte>(134)));
 			this->label2->Location = System::Drawing::Point(92, 47);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(921, 121);
+			this->label2->Size = System::Drawing::Size(921, 136);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"1、在图8－4中，欲使电机反转为什么要把手柄扳到“停止”使电动机M停转后，才能扳向“反转”使之反转，若直接扳至“反转”会造成什么后果？";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -78,7 +82,7 @@ namespace instructional_software {
 				static_cast<System::Byte>(134)));
 			this->label1->Location = System::Drawing::Point(92, 198);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(921, 121);
+			this->label1->Size = System::Drawing::Size(921, 151);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"2、试分析图8-4、8-5、8-6、8-7各有什么特点？并画出运行原理流程图。";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -87,9 +91,9 @@ namespace instructional_software {
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"宋体", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label3->Location = System::Drawing::Point(92, 345);
+			this->label3->Location = System::Drawing::Point(92, 349);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(921, 121);
+			this->label3->Size = System::Drawing::Size(921, 156);
 			this->label3->TabIndex = 7;
 			this->label3->Text = L"3、图8-5、8-6虽然也能实现电动机正反转直接控制，但容易产生什么故障，为什么？图8-7比图8-5和 8-6有什么优点？";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -98,18 +102,29 @@ namespace instructional_software {
 			// 
 			this->label4->Font = (gcnew System::Drawing::Font(L"宋体", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label4->Location = System::Drawing::Point(92, 494);
+			this->label4->Location = System::Drawing::Point(92, 526);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(921, 121);
 			this->label4->TabIndex = 8;
 			this->label4->Text = L"4、接触器和按钮的联锁触点在继电接触控制中起到什么作用？";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(12, 12);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(113, 32);
+			this->button1->TabIndex = 9;
+			this->button1->Text = L"朗读";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验2讨论题::button1_Click);
+			// 
 			// 实验2讨论题
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1147, 685);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label1);
@@ -123,5 +138,26 @@ namespace instructional_software {
 #pragma endregion
 	private: System::Void 实验2讨论题_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek(label2->Text);
+				 Speek(label1->Text);
+				 Speek(label3->Text);
+				 Speek(label4->Text);
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验2讨论题::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		speek_control();
+	
+	}
+};
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验6实验目的Status;
 namespace instructional_software {
 
@@ -8,6 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Threading;
 
 	/// <summary>
 	/// 实验6实验目的 摘要
@@ -18,6 +20,7 @@ namespace instructional_software {
 		实验6实验目的(void)
 		{
 			InitializeComponent();
+			CheckForIllegalCrossThreadCalls = false;
 			实验6实验目的Status = true;
 			//
 			//TODO:  在此处添加构造函数代码
@@ -41,6 +44,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Button^  button1;
 
 	private:
 		/// <summary>
@@ -59,6 +63,7 @@ namespace instructional_software {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label3
@@ -105,11 +110,22 @@ namespace instructional_software {
 			this->label4->Text = L"3、掌握在各种不同场合下应用何种起动方式。";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(35, 21);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 73);
+			this->button1->TabIndex = 7;
+			this->button1->Text = L"朗读";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验6实验目的::button1_Click);
+			// 
 			// 实验6实验目的
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1065, 524);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -123,5 +139,24 @@ namespace instructional_software {
 #pragma endregion
 	private: System::Void 实验6实验目的_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek(label1->Text);
+				 Speek(label2->Text);
+				 Speek(label3->Text);
+				 Speek(label4->Text);
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验6实验目的::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		speek_control();
+	}
+};
 }

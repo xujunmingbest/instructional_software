@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验9讨论题Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验9讨论题 摘要
 	/// </summary>
@@ -18,6 +19,7 @@ namespace instructional_software {
 		实验9讨论题(void)
 		{
 			InitializeComponent();
+			CheckForIllegalCrossThreadCalls = false;
 			实验9讨论题Status = true;
 			//
 			//TODO:  在此处添加构造函数代码
@@ -39,6 +41,8 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label3;
 	protected:
 	private: System::Windows::Forms::Label^  label2;
+
+	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Label^  label1;
 
 	private:
@@ -56,6 +60,7 @@ namespace instructional_software {
 		{
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -63,7 +68,7 @@ namespace instructional_software {
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"宋体", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label3->Location = System::Drawing::Point(31, 311);
+			this->label3->Location = System::Drawing::Point(171, 361);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(767, 132);
 			this->label3->TabIndex = 9;
@@ -74,18 +79,28 @@ namespace instructional_software {
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"宋体", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label2->Location = System::Drawing::Point(31, 182);
+			this->label2->Location = System::Drawing::Point(171, 232);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(756, 89);
 			this->label2->TabIndex = 8;
 			this->label2->Text = L"2、速度继电器在反接制动中起什么作用？";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(12, 12);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 43);
+			this->button1->TabIndex = 14;
+			this->button1->Text = L"朗读";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验9讨论题::button1_Click);
+			// 
 			// label1
 			// 
 			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label1->Location = System::Drawing::Point(31, 42);
+			this->label1->Location = System::Drawing::Point(171, 92);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(906, 122);
 			this->label1->TabIndex = 7;
@@ -96,7 +111,8 @@ namespace instructional_software {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(986, 746);
+			this->ClientSize = System::Drawing::Size(1318, 746);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -109,5 +125,24 @@ namespace instructional_software {
 #pragma endregion
 	private: System::Void 实验9讨论题_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek(label1->Text);
+				 Speek(label2->Text);
+				 Speek(label3->Text);
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验9讨论题::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		speek_control();
+	}
+};
 }

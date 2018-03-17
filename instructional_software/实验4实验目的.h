@@ -100,7 +100,7 @@ namespace instructional_software {
 			// 
 			this->button1->Location = System::Drawing::Point(13, 13);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(75, 52);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"ÀÊ¶Á";
 			this->button1->UseVisualStyleBackColor = true;

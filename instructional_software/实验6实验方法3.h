@@ -44,6 +44,9 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  labelq3;
+	private: System::Windows::Forms::Label^  labelq2;
+	private: System::Windows::Forms::Label^  labelq1;
 	protected:
 
 	private:
@@ -68,6 +71,9 @@ namespace instructional_software {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->labelq3 = (gcnew System::Windows::Forms::Label());
+			this->labelq2 = (gcnew System::Windows::Forms::Label());
+			this->labelq1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -158,11 +164,41 @@ namespace instructional_software {
 			this->label7->Text = L"（5）比较IY起动/I△起动=____________，结果说明什么问题？";
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// labelq3
+			// 
+			this->labelq3->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq3->Location = System::Drawing::Point(408, 87);
+			this->labelq3->Name = L"labelq3";
+			this->labelq3->Size = System::Drawing::Size(10, 43);
+			this->labelq3->TabIndex = 41;
+			this->labelq3->Text = L"labell1";
+			// 
+			// labelq2
+			// 
+			this->labelq2->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq2->Location = System::Drawing::Point(324, 87);
+			this->labelq2->Name = L"labelq2";
+			this->labelq2->Size = System::Drawing::Size(10, 43);
+			this->labelq2->TabIndex = 40;
+			this->labelq2->Text = L"labell1";
+			// 
+			// labelq1
+			// 
+			this->labelq1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq1->Location = System::Drawing::Point(223, 87);
+			this->labelq1->Name = L"labelq1";
+			this->labelq1->Size = System::Drawing::Size(10, 43);
+			this->labelq1->TabIndex = 39;
+			this->labelq1->Text = L"labell1";
+			// 
 			// 实验6实验方法3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1511, 882);
+			this->Controls->Add(this->labelq3);
+			this->Controls->Add(this->labelq2);
+			this->Controls->Add(this->labelq1);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);

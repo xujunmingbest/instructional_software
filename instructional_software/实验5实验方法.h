@@ -341,23 +341,24 @@ namespace instructional_software {
 			 }
 			 Thread ^Thread_speek;
 			 void speek_control() {
-				 Speek(label1->Text);
 				 Speek(label2->Text);
+				 Speek(label1->Text);
+				 Speek(label3->Text);
 				 labelq1->Visible = true;
 				 labelq2->Visible = true;
 				 labelq3->Visible = true;
-				 Speek(label3->Text);
+				 Speek(label4->Text);
 				 labelsb21->Visible = true;
 				 labelsb22->Visible = true;
-				 Speek(label4->Text);
-				 labelsb41->Visible = true;
-				 labelsb42->Visible = true;
 				 Speek(label5->Text);
-				 labelsb31->Visible = true;
-				 labelsb32->Visible = true;
-				 Speek(label6->Text);
 				 labelsb11->Visible = true;
 				 labelsb12->Visible = true;
+				 Speek(label6->Text);
+				 labelsb41->Visible = true;
+				 labelsb42->Visible = true;
+				 Speek(label7->Text);
+				 labelsb31->Visible = true;
+				 labelsb32->Visible = true;
 			 }
 			 void Speek(String ^in) {
 				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验5实验方法::speek));

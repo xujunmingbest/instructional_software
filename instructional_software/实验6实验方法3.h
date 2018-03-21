@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验6实验方法3Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验6实验方法3 摘要
 	/// </summary>
@@ -19,6 +20,7 @@ namespace instructional_software {
 		{
 			InitializeComponent();
 			实验6实验方法3Status = true;
+			CheckForIllegalCrossThreadCalls = false;
 			//
 			//TODO:  在此处添加构造函数代码
 			//
@@ -47,6 +49,17 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  labelq3;
 	private: System::Windows::Forms::Label^  labelq2;
 	private: System::Windows::Forms::Label^  labelq1;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  labelsb21;
+	private: System::Windows::Forms::Label^  labelsb22;
+	private: System::Windows::Forms::Label^  labelsb11;
+	private: System::Windows::Forms::Label^  labelsb12;
+	private: System::Windows::Forms::Label^  labelsb31;
+	private: System::Windows::Forms::Label^  labelsb32;
+
+
+
+
 	protected:
 
 	private:
@@ -74,6 +87,13 @@ namespace instructional_software {
 			this->labelq3 = (gcnew System::Windows::Forms::Label());
 			this->labelq2 = (gcnew System::Windows::Forms::Label());
 			this->labelq1 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->labelsb21 = (gcnew System::Windows::Forms::Label());
+			this->labelsb22 = (gcnew System::Windows::Forms::Label());
+			this->labelsb11 = (gcnew System::Windows::Forms::Label());
+			this->labelsb12 = (gcnew System::Windows::Forms::Label());
+			this->labelsb31 = (gcnew System::Windows::Forms::Label());
+			this->labelsb32 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -91,7 +111,7 @@ namespace instructional_software {
 			// 
 			this->label1->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label1->Location = System::Drawing::Point(866, 39);
+			this->label1->Location = System::Drawing::Point(866, 13);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(492, 62);
 			this->label1->TabIndex = 4;
@@ -102,7 +122,7 @@ namespace instructional_software {
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label2->Location = System::Drawing::Point(866, 119);
+			this->label2->Location = System::Drawing::Point(866, 87);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(492, 62);
 			this->label2->TabIndex = 5;
@@ -113,7 +133,7 @@ namespace instructional_software {
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label3->Location = System::Drawing::Point(866, 216);
+			this->label3->Location = System::Drawing::Point(866, 176);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(492, 62);
 			this->label3->TabIndex = 6;
@@ -124,9 +144,9 @@ namespace instructional_software {
 			// 
 			this->label4->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label4->Location = System::Drawing::Point(866, 306);
+			this->label4->Location = System::Drawing::Point(866, 244);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(492, 62);
+			this->label4->Size = System::Drawing::Size(556, 103);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"（2）按下SB1，电动机作Y接法起动，注意观察起动时，电流表最大读数IY起动=___________A。";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -135,9 +155,9 @@ namespace instructional_software {
 			// 
 			this->label5->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label5->Location = System::Drawing::Point(866, 394);
+			this->label5->Location = System::Drawing::Point(866, 379);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(492, 62);
+			this->label5->Size = System::Drawing::Size(621, 89);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"（3）按下SB2，使电机为△接法正常运行，注意观察△运行时，电流表电流为I△运行＝________A。";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -146,9 +166,9 @@ namespace instructional_software {
 			// 
 			this->label6->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label6->Location = System::Drawing::Point(866, 481);
+			this->label6->Location = System::Drawing::Point(866, 483);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(492, 62);
+			this->label6->Size = System::Drawing::Size(633, 97);
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"（4）按SB3停止后，先按下SB2，再同时按下起动按钮SB1，观察电机在△接法直接起动时电流表最大读数I△起动＝________安。";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -157,9 +177,9 @@ namespace instructional_software {
 			// 
 			this->label7->Font = (gcnew System::Drawing::Font(L"宋体", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
-			this->label7->Location = System::Drawing::Point(866, 562);
+			this->label7->Location = System::Drawing::Point(866, 598);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(492, 62);
+			this->label7->Size = System::Drawing::Size(592, 62);
 			this->label7->TabIndex = 10;
 			this->label7->Text = L"（5）比较IY起动/I△起动=____________，结果说明什么问题？";
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -191,11 +211,81 @@ namespace instructional_software {
 			this->labelq1->TabIndex = 39;
 			this->labelq1->Text = L"labell1";
 			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"宋体", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button1->Location = System::Drawing::Point(871, 676);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(248, 48);
+			this->button1->TabIndex = 42;
+			this->button1->Text = L"朗读并演示";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验6实验方法3::button1_Click);
+			// 
+			// labelsb21
+			// 
+			this->labelsb21->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelsb21->Location = System::Drawing::Point(757, 449);
+			this->labelsb21->Name = L"labelsb21";
+			this->labelsb21->Size = System::Drawing::Size(10, 45);
+			this->labelsb21->TabIndex = 44;
+			this->labelsb21->Text = L"label12";
+			// 
+			// labelsb22
+			// 
+			this->labelsb22->BackColor = System::Drawing::Color::White;
+			this->labelsb22->Location = System::Drawing::Point(751, 449);
+			this->labelsb22->Name = L"labelsb22";
+			this->labelsb22->Size = System::Drawing::Size(19, 41);
+			this->labelsb22->TabIndex = 43;
+			// 
+			// labelsb11
+			// 
+			this->labelsb11->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelsb11->Location = System::Drawing::Point(601, 370);
+			this->labelsb11->Name = L"labelsb11";
+			this->labelsb11->Size = System::Drawing::Size(10, 38);
+			this->labelsb11->TabIndex = 46;
+			this->labelsb11->Text = L"label12";
+			// 
+			// labelsb12
+			// 
+			this->labelsb12->BackColor = System::Drawing::Color::White;
+			this->labelsb12->Location = System::Drawing::Point(593, 370);
+			this->labelsb12->Name = L"labelsb12";
+			this->labelsb12->Size = System::Drawing::Size(18, 28);
+			this->labelsb12->TabIndex = 45;
+			// 
+			// labelsb31
+			// 
+			this->labelsb31->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelsb31->Location = System::Drawing::Point(601, 272);
+			this->labelsb31->Name = L"labelsb31";
+			this->labelsb31->Size = System::Drawing::Size(10, 45);
+			this->labelsb31->TabIndex = 48;
+			this->labelsb31->Text = L"label12";
+			// 
+			// labelsb32
+			// 
+			this->labelsb32->BackColor = System::Drawing::Color::White;
+			this->labelsb32->Location = System::Drawing::Point(595, 272);
+			this->labelsb32->Name = L"labelsb32";
+			this->labelsb32->Size = System::Drawing::Size(19, 41);
+			this->labelsb32->TabIndex = 47;
+			// 
 			// 实验6实验方法3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1511, 882);
+			this->Controls->Add(this->labelsb31);
+			this->Controls->Add(this->labelsb32);
+			this->Controls->Add(this->labelsb11);
+			this->Controls->Add(this->labelsb12);
+			this->Controls->Add(this->labelsb21);
+			this->Controls->Add(this->labelsb22);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->labelq3);
 			this->Controls->Add(this->labelq2);
 			this->Controls->Add(this->labelq1);
@@ -217,6 +307,51 @@ namespace instructional_software {
 		}
 #pragma endregion
 	private: System::Void 实验6实验方法3_Load(System::Object^  sender, System::EventArgs^  e) {
+		init();
 	}
-	};
+			 void init() {
+				 labelq1->Visible = false;
+				 labelq2->Visible = false;
+				 labelq3->Visible = false;
+				 labelsb11->Visible = false;
+				 labelsb12->Visible = false;
+				 labelsb21->Visible = false;
+				 labelsb22->Visible = false;
+				 labelsb32->Visible = false;
+				 labelsb31->Visible = false;
+			 }
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek(label1->Text);
+				 Speek(label2->Text);
+				 Speek(label3->Text);
+				 labelq1->Visible = true;
+				 labelq2->Visible = true;
+				 labelq3->Visible = true;
+				 Speek(label4->Text);
+				 labelsb11->Visible = true;
+				 labelsb12->Visible = true;
+				 Speek(label5->Text);
+				 labelsb21->Visible = true;
+				 labelsb22->Visible = true;
+				 Speek(label6->Text);
+				 labelsb31->Visible = true;
+				 labelsb32->Visible = true;
+				 Speek(label7->Text);
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验6实验方法3::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		init();
+		speek_control();
+	}
+};
 }

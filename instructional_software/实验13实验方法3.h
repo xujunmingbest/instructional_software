@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验13实验方法3Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验13实验方法3 摘要
 	/// </summary>
@@ -18,6 +19,7 @@ namespace instructional_software {
 		实验13实验方法3(void)
 		{
 			InitializeComponent();
+			CheckForIllegalCrossThreadCalls = false;
 			实验13实验方法3Status = true;
 			//
 			//TODO:  在此处添加构造函数代码
@@ -42,6 +44,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Button^  button1;
 	protected:
 
 	private:
@@ -63,6 +66,7 @@ namespace instructional_software {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -120,11 +124,22 @@ namespace instructional_software {
 			this->label2->Text = L"3、查找与排除故障";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(880, 25);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(161, 53);
+			this->button1->TabIndex = 48;
+			this->button1->Text = L"朗读并演示";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验13实验方法3::button1_Click);
+			// 
 			// 实验13实验方法3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1441, 771);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -141,5 +156,7 @@ namespace instructional_software {
 #pragma endregion
 	private: System::Void 实验13实验方法3_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h" 
 extern bool 实验13实验方法2Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验13实验方法2 摘要
 	/// </summary>
@@ -18,6 +19,7 @@ namespace instructional_software {
 		实验13实验方法2(void)
 		{
 			InitializeComponent();
+			CheckForIllegalCrossThreadCalls = false;
 			实验13实验方法2Status = true;
 			//
 			//TODO:  在此处添加构造函数代码
@@ -43,6 +45,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Button^  button1;
 	protected:
 
 	private:
@@ -66,6 +69,7 @@ namespace instructional_software {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -146,11 +150,22 @@ namespace instructional_software {
 			this->label5->Text = L"（5）拨动S1开关（即S1-1、S1-2闭合、S1-3断开），KM 1主触头马上断开，主轴电机应制动。";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(516, 12);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(161, 53);
+			this->button1->TabIndex = 48;
+			this->button1->Text = L"朗读并演示";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验13实验方法2::button1_Click);
+			// 
 			// 实验13实验方法2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1466, 760);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label6);
@@ -171,5 +186,7 @@ namespace instructional_software {
 	}
 	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

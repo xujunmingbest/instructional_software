@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验2实验方法4Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验2实验方法4 摘要
 	/// </summary>
@@ -19,6 +20,7 @@ namespace instructional_software {
 		{
 			InitializeComponent();
 			实验2实验方法4Status = true;
+			CheckForIllegalCrossThreadCalls = false;
 			//
 			//TODO:  在此处添加构造函数代码
 			//
@@ -149,6 +151,7 @@ namespace instructional_software {
 			this->button1->TabIndex = 11;
 			this->button1->Text = L"朗读并演示";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验2实验方法4::button1_Click);
 			// 
 			// labelq3
 			// 
@@ -204,6 +207,36 @@ namespace instructional_software {
 	private: System::Void 实验2实验方法4_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
+		init();
 	}
+			 void init() {
+				 labelq1->Visible = false;
+				 labelq2->Visible = false;
+				 labelq3->Visible = false;
+			 }
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek(label1->Text);
+				 labelq1->Visible = true;
+				 labelq2->Visible = true;
+				 labelq3->Visible = true;
+				 Speek(label2->Text);
+				 Speek(label3->Text);
+				 Speek(label4->Text);
+				 Speek(label5->Text);
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验2实验方法4::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	init();
+	speek_control();
+}
 };
 }

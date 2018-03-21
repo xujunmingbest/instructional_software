@@ -1,4 +1,5 @@
 #pragma once
+#include "voice.h"
 extern bool 实验1实验方法3Status;
 namespace instructional_software {
 
@@ -8,7 +9,7 @@ namespace instructional_software {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Threading;
 	/// <summary>
 	/// 实验1实验方法3 摘要
 	/// </summary>
@@ -18,6 +19,7 @@ namespace instructional_software {
 		实验1实验方法3(void)
 		{
 			InitializeComponent();
+			CheckForIllegalCrossThreadCalls = false;
 			实验1实验方法3Status = true;
 			//
 			//TODO:  在此处添加构造函数代码
@@ -41,17 +43,30 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  labelkm11;
+	private: System::Windows::Forms::Label^  labelkm12;
+	private: System::Windows::Forms::Label^  labelkm13;
 
-	private: System::Windows::Forms::Label^  labelkm1;
-	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::Label^  label10;
-	private: System::Windows::Forms::Label^  label6;
+
+
+
+	private: System::Windows::Forms::Label^  labelq11;
+	private: System::Windows::Forms::Label^  labelq12;
+	private: System::Windows::Forms::Label^  labelq13;
+
+
+
 	private: System::Windows::Forms::Label^  labelsb22;
 	private: System::Windows::Forms::Label^  labelsb21;
-	private: System::Windows::Forms::Label^  label11;
-	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::Label^  labelsb11;
+	private: System::Windows::Forms::Label^  labelsb12;
+
+
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  labelsb31;
+	private: System::Windows::Forms::Label^  labelsb32;
+
+
 
 	protected:
 
@@ -75,16 +90,19 @@ namespace instructional_software {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->labelkm1 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->labelkm11 = (gcnew System::Windows::Forms::Label());
+			this->labelkm12 = (gcnew System::Windows::Forms::Label());
+			this->labelkm13 = (gcnew System::Windows::Forms::Label());
+			this->labelq11 = (gcnew System::Windows::Forms::Label());
+			this->labelq12 = (gcnew System::Windows::Forms::Label());
+			this->labelq13 = (gcnew System::Windows::Forms::Label());
 			this->labelsb22 = (gcnew System::Windows::Forms::Label());
 			this->labelsb21 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->labelsb11 = (gcnew System::Windows::Forms::Label());
+			this->labelsb12 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->labelsb31 = (gcnew System::Windows::Forms::Label());
+			this->labelsb32 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -142,59 +160,59 @@ namespace instructional_software {
 			this->label4->Text = L"（4）按下停止按钮SB1，松手后观察M是否停转。";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// labelkm1
+			// labelkm11
 			// 
-			this->labelkm1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->labelkm1->Location = System::Drawing::Point(45, 231);
-			this->labelkm1->Name = L"labelkm1";
-			this->labelkm1->Size = System::Drawing::Size(19, 10);
-			this->labelkm1->TabIndex = 8;
-			this->labelkm1->Text = L"label5";
+			this->labelkm11->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelkm11->Location = System::Drawing::Point(45, 231);
+			this->labelkm11->Name = L"labelkm11";
+			this->labelkm11->Size = System::Drawing::Size(19, 10);
+			this->labelkm11->TabIndex = 8;
+			this->labelkm11->Text = L"label5";
 			// 
-			// label7
+			// labelkm12
 			// 
-			this->label7->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label7->Location = System::Drawing::Point(106, 231);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(19, 10);
-			this->label7->TabIndex = 9;
-			this->label7->Text = L"label5";
+			this->labelkm12->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelkm12->Location = System::Drawing::Point(106, 231);
+			this->labelkm12->Name = L"labelkm12";
+			this->labelkm12->Size = System::Drawing::Size(19, 10);
+			this->labelkm12->TabIndex = 9;
+			this->labelkm12->Text = L"label5";
 			// 
-			// label8
+			// labelkm13
 			// 
-			this->label8->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label8->Location = System::Drawing::Point(156, 231);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(19, 10);
-			this->label8->TabIndex = 10;
-			this->label8->Text = L"label5";
+			this->labelkm13->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelkm13->Location = System::Drawing::Point(156, 231);
+			this->labelkm13->Name = L"labelkm13";
+			this->labelkm13->Size = System::Drawing::Size(19, 10);
+			this->labelkm13->TabIndex = 10;
+			this->labelkm13->Text = L"label5";
 			// 
-			// label9
+			// labelq11
 			// 
-			this->label9->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label9->Location = System::Drawing::Point(45, 73);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(19, 10);
-			this->label9->TabIndex = 11;
-			this->label9->Text = L"label5";
+			this->labelq11->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq11->Location = System::Drawing::Point(45, 73);
+			this->labelq11->Name = L"labelq11";
+			this->labelq11->Size = System::Drawing::Size(19, 10);
+			this->labelq11->TabIndex = 11;
+			this->labelq11->Text = L"label5";
 			// 
-			// label10
+			// labelq12
 			// 
-			this->label10->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label10->Location = System::Drawing::Point(106, 73);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(19, 10);
-			this->label10->TabIndex = 12;
-			this->label10->Text = L"label5";
+			this->labelq12->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq12->Location = System::Drawing::Point(106, 73);
+			this->labelq12->Name = L"labelq12";
+			this->labelq12->Size = System::Drawing::Size(19, 10);
+			this->labelq12->TabIndex = 12;
+			this->labelq12->Text = L"label5";
 			// 
-			// label6
+			// labelq13
 			// 
-			this->label6->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label6->Location = System::Drawing::Point(156, 73);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(19, 10);
-			this->label6->TabIndex = 13;
-			this->label6->Text = L"label5";
+			this->labelq13->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelq13->Location = System::Drawing::Point(156, 73);
+			this->labelq13->Name = L"labelq13";
+			this->labelq13->Size = System::Drawing::Size(19, 10);
+			this->labelq13->TabIndex = 13;
+			this->labelq13->Text = L"label5";
 			// 
 			// labelsb22
 			// 
@@ -213,38 +231,70 @@ namespace instructional_software {
 			this->labelsb21->Size = System::Drawing::Size(19, 21);
 			this->labelsb21->TabIndex = 16;
 			// 
-			// label11
+			// labelsb11
 			// 
-			this->label11->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label11->Location = System::Drawing::Point(297, 187);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(19, 10);
-			this->label11->TabIndex = 19;
-			this->label11->Text = L"label12";
+			this->labelsb11->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelsb11->Location = System::Drawing::Point(297, 187);
+			this->labelsb11->Name = L"labelsb11";
+			this->labelsb11->Size = System::Drawing::Size(19, 10);
+			this->labelsb11->TabIndex = 19;
+			this->labelsb11->Text = L"label12";
 			// 
-			// label12
+			// labelsb12
 			// 
-			this->label12->BackColor = System::Drawing::Color::White;
-			this->label12->Location = System::Drawing::Point(303, 171);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(19, 21);
-			this->label12->TabIndex = 18;
+			this->labelsb12->BackColor = System::Drawing::Color::White;
+			this->labelsb12->Location = System::Drawing::Point(303, 171);
+			this->labelsb12->Name = L"labelsb12";
+			this->labelsb12->Size = System::Drawing::Size(19, 21);
+			this->labelsb12->TabIndex = 18;
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"宋体", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button1->Location = System::Drawing::Point(451, 436);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(248, 48);
+			this->button1->TabIndex = 20;
+			this->button1->Text = L"朗读并演示";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &实验1实验方法3::button1_Click);
+			// 
+			// labelsb31
+			// 
+			this->labelsb31->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->labelsb31->Location = System::Drawing::Point(348, 241);
+			this->labelsb31->Name = L"labelsb31";
+			this->labelsb31->Size = System::Drawing::Size(10, 30);
+			this->labelsb31->TabIndex = 22;
+			this->labelsb31->Text = L"label12";
+			// 
+			// labelsb32
+			// 
+			this->labelsb32->BackColor = System::Drawing::Color::White;
+			this->labelsb32->Location = System::Drawing::Point(343, 244);
+			this->labelsb32->Name = L"labelsb32";
+			this->labelsb32->Size = System::Drawing::Size(19, 21);
+			this->labelsb32->TabIndex = 21;
 			// 
 			// 实验1实验方法3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1266, 749);
-			this->Controls->Add(this->label11);
-			this->Controls->Add(this->label12);
+			this->Controls->Add(this->labelsb31);
+			this->Controls->Add(this->labelsb32);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->labelsb11);
+			this->Controls->Add(this->labelsb12);
 			this->Controls->Add(this->labelsb22);
 			this->Controls->Add(this->labelsb21);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label10);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->labelkm1);
+			this->Controls->Add(this->labelq13);
+			this->Controls->Add(this->labelq12);
+			this->Controls->Add(this->labelq11);
+			this->Controls->Add(this->labelkm13);
+			this->Controls->Add(this->labelkm12);
+			this->Controls->Add(this->labelkm11);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -260,6 +310,51 @@ namespace instructional_software {
 		}
 #pragma endregion
 	private: System::Void 实验1实验方法3_Load(System::Object^  sender, System::EventArgs^  e) {
+		init();
 	}
-	};
+			 void init() {
+				 labelq11->Visible = false;
+				 labelq12->Visible = false;
+				 labelq13->Visible = false;
+				 labelkm11->Visible = false;
+				 labelkm12->Visible = false;
+				 labelkm13->Visible = false;
+				 labelsb21->Visible = false;
+				 labelsb22->Visible = false;
+				 labelsb11->Visible = false;
+				 labelsb12->Visible = false;
+				 labelsb31->Visible = false;
+				 labelsb32->Visible = false;
+			 }
+			 Thread ^Thread_speek;
+			 void speek_control() {
+				 Speek(label1->Text);
+				 labelq11->Visible = true;
+				 labelq12->Visible = true;
+				 labelq13->Visible = true;
+				 Speek(label2->Text);
+				 labelsb21->Visible = true;
+				 labelsb22->Visible = true;
+				 Speek(label3->Text);
+				 labelsb31->Visible = true;
+				 labelsb32->Visible = true;
+				 Speek(label4->Text);
+				 labelsb11->Visible = true;
+				 labelsb12->Visible = true;
+			 }
+			 void Speek(String ^in) {
+				 Thread_speek = gcnew Thread(gcnew ThreadStart(this, &实验1实验方法3::speek));
+				 Thread_speek->Name = in;
+				 Thread_speek->Start();
+				 Thread_speek->Join();
+			 }
+			 void speek() {
+				 g_voice.voice_speek(Thread_speek->Name);
+			 }
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		init();
+		speek_control();
+	}
+};
 }

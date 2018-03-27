@@ -1,0 +1,31 @@
+﻿  base.cpp
+  main.cpp
+  voice.cpp
+  主窗体.cpp
+  source.cpp
+source.cpp(8): warning C4477: “snprintf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const System::String ^”
+source.cpp(19): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+source.cpp(22): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+source.cpp(32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  声音配置.cpp
+  实验1.cpp
+  实验10.cpp
+  实验10实验方法.cpp
+  实验10实验目的.cpp
+  实验10讨论题.cpp
+  实验10选用组件.cpp
+  实验11.cpp
+  实验11实验方法.cpp
+  实验11实验目的.cpp
+  实验11讨论题.cpp
+  实验11选用组件.cpp
+  实验12.cpp
+  实验12实验方法.cpp
+  实验12实验目的.cpp
+  正在生成代码...
+  正在编译...
+  实验12讨论题.cpp
+  实验12选用组件.cpp
+  实验13.cpp
+  实验13实验方法1.cpp
+  实验13实验方法2.cpp

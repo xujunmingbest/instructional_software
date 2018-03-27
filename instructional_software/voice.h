@@ -12,7 +12,6 @@ using namespace instructional_software;
 #pragma comment(lib,"ole32.lib")   //CoInitialize CoCreateInstance需要调用ole32.dll    
 #pragma comment(lib,"sapi.lib")    //sapi.lib在SDK的lib目录,必需正确配置   
 
-extern string LangdunvPath;
 
 
 #define VOICE_ENGINE_LANGDUNV 0
@@ -31,6 +30,7 @@ public:
 	~voice();
 	void set_voice_engine(int flag);
 	void set_LangdunvPath(String ^path);
+	void set_LangdunvPath(string &path);
 	void voice_speek(String^ in);
 	void voice_speek(string &in);
 	void pause() {

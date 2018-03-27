@@ -1,9 +1,7 @@
 #include "voice.h"
-
+#include "xml/xml.h"
 
 voice::voice() {
-	LangdunvPath = "\"C:\\Program Files (x86)\\¿ ∂¡≈Æ\\¿ ∂¡≈Æ.exe\" d=";
-
 	pVoice = nullptr;
 
 	if (FAILED(::CoInitialize(NULL)))
@@ -20,10 +18,12 @@ voice::voice() {
 		cout << "TTS…˘“Ù“˝«Ê≥ı ºªØ ß∞‹" << endl;
 		pVoice = nullptr;
 	}
-	
+
+#ifdef _DEBUG
 	wchar_t *TTStest = multiByteToWideChar("Œ“ «TTS”Ô“Ù“˝«Ê");
 	pVoice->Speak(TTStest, SPF_DEFAULT, nullptr);
 	delete[] TTStest;
+#endif
 	return;
 }
 
@@ -43,11 +43,16 @@ void voice::set_voice_engine(int flag)
 
 void voice::set_LangdunvPath(String ^path)
 {
-	LangdunvPath = T_to_string(path, path->Length * 2);
+	string Path = T_to_string(path, path->Length * 2);
+	set_LangdunvPath(Path);
+}
+void voice::set_LangdunvPath(string &path)
+{
+	LangdunvPath.clear();
 	LangdunvPath.insert(0, "\"");
+	LangdunvPath += path;
 	LangdunvPath.insert(LangdunvPath.length(), "\" d=");
 }
-
 void voice::voice_speek(string &in)
 {
 	try {
@@ -57,7 +62,7 @@ void voice::voice_speek(string &in)
 			throw "”Ô“Ù“˝«Ê—°‘Ò¥ÌŒÛ";
 		}
 	}
-	catch(string &e){
+	catch(char* e){
 		cout << e << endl;
 		return;
 	}

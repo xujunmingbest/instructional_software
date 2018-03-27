@@ -131,8 +131,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base.cpp" />
+    <ClCompile Include="flash.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="voice.cpp" />
+    <ClCompile Include="xml\tinystr.cpp" />
+    <ClCompile Include="xml\tinyxml.cpp" />
+    <ClCompile Include="xml\tinyxmlerror.cpp" />
+    <ClCompile Include="xml\tinyxmlparser.cpp" />
+    <ClCompile Include="xml\xml.cpp" />
     <ClCompile Include="主窗体.cpp" />
     <ClCompile Include="source.cpp" />
     <ClCompile Include="声音配置.cpp" />
@@ -219,12 +225,21 @@
     <ClInclude Include="base.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="flash.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="voice.h" />
+    <ClInclude Include="xml\tinystr.h" />
+    <ClInclude Include="xml\tinyxml.h" />
+    <ClInclude Include="xml\xml.h" />
     <ClInclude Include="主窗体.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="source.h" />
     <ClInclude Include="声音配置.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="子窗体\flash.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="实验1.h">
@@ -466,6 +481,9 @@
     <EmbeddedResource Include="base.resx">
       <DependentUpon>base.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="flash.resx">
+      <DependentUpon>flash.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="主窗体.resx">
       <DependentUpon>主窗体.h</DependentUpon>
     </EmbeddedResource>
@@ -706,6 +724,43 @@
     <EmbeddedResource Include="实验9选用组件.resx">
       <DependentUpon>实验9选用组件.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib.1.0.dll">
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="AxWMPLib.1.0.dll">
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>aximp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects.1.0.dll">
+      <Guid>d27cdb6b-ae6d-11cf-96b8-444553540000</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+    </COMReference>
+    <COMReference Include="AxShockwaveFlashObjects.1.0.dll">
+      <Guid>d27cdb6b-ae6d-11cf-96b8-444553540000</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>aximp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="pz.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

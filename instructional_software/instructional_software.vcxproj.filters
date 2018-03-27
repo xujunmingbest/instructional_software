@@ -315,6 +315,24 @@
     <ClCompile Include="声音配置.cpp">
       <Filter>子窗体\声音配置</Filter>
     </ClCompile>
+    <ClCompile Include="flash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xml\tinystr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xml\tinyxml.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xml\tinyxmlerror.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xml\tinyxmlparser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xml\xml.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="实验1.h">
@@ -566,6 +584,21 @@
     <ClInclude Include="声音配置.h">
       <Filter>子窗体\声音配置</Filter>
     </ClInclude>
+    <ClInclude Include="子窗体\flash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="flash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xml\tinystr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xml\tinyxml.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xml\xml.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="实验1.resx">
@@ -808,5 +841,14 @@
     <EmbeddedResource Include="实验13选用组件.resx">
       <Filter>资源文件</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="声音配置.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flash.resx">
+      <Filter>资源文件</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="pz.xml" />
   </ItemGroup>
 </Project>

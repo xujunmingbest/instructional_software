@@ -14,6 +14,7 @@
 #include "实验12.h"
 #include "实验13.h"
 #include "声音配置.h"
+#include "flash.h"
 namespace instructional_software {
 
 	using namespace System;
@@ -67,6 +68,7 @@ namespace instructional_software {
 	private: System::Windows::Forms::ToolStripMenuItem^  实验十二ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  实验十三ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  声音配置ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  flash动画演示ToolStripMenuItem;
 
 	private:
 		/// <summary>
@@ -97,6 +99,7 @@ namespace instructional_software {
 			this->实验十二ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->实验十三ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->声音配置ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->flash动画演示ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -105,9 +108,9 @@ namespace instructional_software {
 			this->menuStrip1->Font = (gcnew System::Drawing::Font(L"微软雅黑", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(134)));
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->实验ToolStripMenuItem,
-					this->声音配置ToolStripMenuItem
+					this->声音配置ToolStripMenuItem, this->flash动画演示ToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -225,6 +228,13 @@ namespace instructional_software {
 			this->声音配置ToolStripMenuItem->Text = L"声音配置";
 			this->声音配置ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::声音配置ToolStripMenuItem_Click);
 			// 
+			// flash动画演示ToolStripMenuItem
+			// 
+			this->flash动画演示ToolStripMenuItem->Name = L"flash动画演示ToolStripMenuItem";
+			this->flash动画演示ToolStripMenuItem->Size = System::Drawing::Size(184, 36);
+			this->flash动画演示ToolStripMenuItem->Text = L"flash动画演示";
+			this->flash动画演示ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainWnd::flash动画演示ToolStripMenuItem_Click);
+			// 
 			// MainWnd
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
@@ -262,6 +272,7 @@ private:
 	实验12 ^实验12Wnd;
 	实验13 ^实验13Wnd;
 	声音配置^ 声音配置Wnd;
+	flash^ flashWnd;
 	private: System::Void 实验一ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
 		if (实验1Status == true)
@@ -431,6 +442,19 @@ private: System::Void 声音配置ToolStripMenuItem_Click(System::Object^  sender, S
 	声音配置Wnd->MdiParent = this;
 	声音配置Wnd->Show();
 	声音配置Wnd->WindowState = FormWindowState::Maximized;
+}
+private: System::Void flash动画演示ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (flashStatus == true)
+	{
+		flashWnd->BringToFront(); //这个可以置于最前面
+		flashWnd->WindowState = FormWindowState::Maximized;
+		return;
+	}
+	flashWnd = gcnew flash;
+	flashWnd->MdiParent = this;
+	flashWnd->Show();
+	flashWnd->WindowState = FormWindowState::Maximized;
+	
 }
 };
 }

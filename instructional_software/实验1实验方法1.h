@@ -21,7 +21,7 @@ namespace instructional_software {
 			InitializeComponent();
 			CheckForIllegalCrossThreadCalls = false;
 			实验1实验方法1Status = true;
-			//
+						//
 			//TODO:  在此处添加构造函数代码
 			//
 		}
@@ -59,6 +59,9 @@ namespace instructional_software {
 	private: System::Windows::Forms::Label^  labelkm3;
 	private: System::Windows::Forms::Label^  labelsb12;
 	private: System::Windows::Forms::Label^  labelsb11;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  button3;
+
 
 
 
@@ -95,6 +98,8 @@ namespace instructional_software {
 			this->labelkm3 = (gcnew System::Windows::Forms::Label());
 			this->labelsb12 = (gcnew System::Windows::Forms::Label());
 			this->labelsb11 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -237,11 +242,37 @@ namespace instructional_software {
 			this->labelsb11->TabIndex = 20;
 			this->labelsb11->Text = L"label8";
 			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button2->Location = System::Drawing::Point(451, 557);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(225, 58);
+			this->button2->TabIndex = 21;
+			this->button2->Text = L"线程挂起";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &实验1实验方法1::button2_Click_1);
+			// 
+			// button3
+			// 
+			this->button3->Font = (gcnew System::Drawing::Font(L"宋体", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(134)));
+			this->button3->Location = System::Drawing::Point(779, 557);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(225, 58);
+			this->button3->TabIndex = 22;
+			this->button3->Text = L"线程继续";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &实验1实验方法1::button3_Click);
+			// 
 			// 实验1实验方法1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1333, 727);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->labelsb11);
 			this->Controls->Add(this->labelsb12);
 			this->Controls->Add(this->labelkm3);
@@ -280,7 +311,8 @@ namespace instructional_software {
 			 }
 			 Thread ^Thread_speek;
 			 void speek_control() {
-				 Speek(label1->Text);
+				 init();
+				//Speek(label1->Text);
 				 Speek(label2->Text);
 				 labelkm1->Visible = true;
 				 labelkm2->Visible = true;
@@ -302,13 +334,38 @@ namespace instructional_software {
 			 void speek() {
 				 g_voice.voice_speek(Thread_speek->Name);
 			 }
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		init();
-		speek_control();
+			 Thread^	 Thread1;
+    private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		Thread1 = gcnew Thread(gcnew ThreadStart(this, &实验1实验方法1::speek_control));
+		Thread1->Start();
+		Console::Write(Thread1->ThreadState);
+		//	init();
+		//speek_control();
 	}
+			 /*
+	设计文档: 开始的时候启动，线程挂起
+	          然后 点击的时候检查线程的状态
+			  然后在点击线程的挂起
+			  暂停的时候，直接暂停
+			  继续的时候发现线程是不是挂起的状态
+			  杀死线程，观察状态
+			 */
 
-private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	g_voice.pause();
+private: System::Void button2_Click_1(System::Object^  sender, System::EventArgs^  e) {
+	Thread1->Suspend();
+	Console::Write("\n");
+	Console::Write(Thread1->ThreadState);
+}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	//Thread1->Resume();
+	if (Thread1 == nullptr)
+	{
+		Console::Write("线程为 nullptr");
+	}
+	else {
+		Console::Write(Thread1->ThreadState);
+		Thread1->Resume();
+	}
 }
 };
 }
